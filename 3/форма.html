@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="/style.css">
+        <title>Задание 3</title>
+    </head>
+    <body>
+        <form action="https://www.example.com" method="POST" class="form" id="form">
+            <h2>Форма</h2>         
+            <label>
+                ФИО:<br>
+                <input name="text" placeholder="Трубиенко Татьяна Алексеевна" type="name">
+            </label><br>
+            <label>
+                Телефон:<br>
+                <input name="tel" placeholder="+7-123-45-67" type="email">
+            </label><br>
+            <label>
+                Email:<br>
+                <input name="email" placeholder="rinatiadzua@gmail.com" type="email">
+            </label><br>
+            <label>
+                Дата рождения:<br>
+                <input name="date" value="2000-01-01" type="date"><br>
+                Пол:<br>
+                <label>
+                    <input type="radio" name="radio1" value="male">
+                    М
+                </label>
+                <label>
+                    <input type="radio" name="radio1" value="female">
+                    Ж
+                </label>
+            </label><br>
+            <label>
+                Любимый язык программирования:
+                <br>
+                <select name="name[]" multiple="multiple" size="4">
+                    <option value="1">Paskal</option>
+                    <option value="2">C</option>
+                    <option value="3">C++</option>
+                    <option value="4">JavaScript</option>
+                    <option value="5">PHP</option>
+                    <option value="6">Python</option>
+                    <option value="7">Java</option>
+                    <option value="8">Haskel</option>
+                    <option value="9">Clojure</option>
+                    <option value="10">Prolog</option>
+                    <option value="11">Scala</option>
+                </select><br>
+                Биография:<br>
+                <textarea name="biog"> </textarea>
+            </label><br>
+            С контрактом ознакомлен(а):<br>
+            <input type="checkbox" checked="checked" value="on" name="check1"><br>
+            <input type="submit" value="Сохранить">
+        </form>
+    </body>
+</html>
