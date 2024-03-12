@@ -47,7 +47,7 @@ if (empty($_POST['text']) || !preg_match('/^[a-zA-Z\s]{1,150}$/', $_POST['text']
   }
   
   $valid_languages = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11");
-  if (!isset($_POST['languages'])) {
+  if (!isset($_POST['name'])) {
   print('Выберете языки.<br/>');
   $errors = TRUE;
   }
@@ -90,7 +90,7 @@ $db = new PDO('mysql:host=localhost;dbname=u67355', $user, $pass,
 
 // Подготовленный запрос. Не именованные метки.
 try {
-  $stmt = $db->prepare("INSERT INTO application (text, tel, email, date, radio1, biog, check1) VALUES (?, ?, ?, ?, ?, ?, ?)");
+  $stmt = $db->prepare("INSERT INTO form (text, tel, email, date, radio1, biog, check1) VALUES (?, ?, ?, ?, ?, ?, ?)");
   $stmt->execute([
   $_POST['text'],
   $_POST['tel'],
@@ -100,7 +100,7 @@ try {
   $_POST['biog'],
   $_POST['check1']
   ]);
-  $application_id = $db->lastInsertId();
+  $form_id = $db->lastInsertId();
   foreach ($_POST['name'] as $language) {
   $stmt = $db->prepare("INSERT INTO pl (name) VALUES (?)");
   $stmt->execute([$language]);
